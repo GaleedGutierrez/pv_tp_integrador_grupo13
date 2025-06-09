@@ -1,0 +1,98 @@
+/* stylelint-disable-next-line import-notation */
+@import "tailwindcss";
+
+@font-face {
+	font-family: Satoshi;
+	src: url("/fonts/Satoshi/Satoshi-Variable.woff2") format("woff2");
+	font-display: swap;
+}
+
+@font-face {
+	font-family: IntegralCF;
+	src: url("/fonts/IntegralCF/IntegralCF-Bold.woff2") format("woff2");
+	font-weight: bold;
+	font-display: swap;
+}
+
+@theme {
+	--font-fallback:
+		system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", "Noto Sans",
+		helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	--font-fallback-primary: arial, var(--font-fallback);
+	--font-fallback-heading: helvetica, var(--font-fallback);
+}
+
+@utility font-primary-fallback {
+	font-family: var(--font-fallback-primary);
+	letter-spacing: -0.05px;
+	word-spacing: -0.15px;
+}
+
+@utility font-heading-fallback {
+	font-family: var(--font-fallback-heading);
+	font-weight: 900;
+	line-height: 1.61;
+	letter-spacing: -0.5px;
+	text-transform: uppercase;
+	word-spacing: 0.25px;
+}
+
+@utility font-primary {
+	font-family: Satoshi, var(--font-fallback-primary);
+	letter-spacing: initial;
+	word-spacing: initial;
+}
+
+@utility font-heading {
+	font-family: IntegralCF, var(--font-fallback-heading);
+	line-height: initial;
+	letter-spacing: initial;
+	text-transform: initial;
+	word-spacing: initial;
+}
+
+@layer base {
+	body {
+		/* stylelint-disable-next-line at-rule-no-deprecated */
+		@apply font-primary-fallback;
+	}
+
+	h1,
+	h2,
+	h3 {
+		/* stylelint-disable-next-line at-rule-no-deprecated */
+		@apply font-heading-fallback;
+	}
+
+	h1 {
+		font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw + 1rem, var(--text-5xl));
+	}
+
+	h3 {
+		font-size: clamp(2rem, 4vw + 1rem, 2.5rem);
+	}
+
+	body.fonts-loaded {
+		/* stylelint-disable-next-line at-rule-no-deprecated */
+		@apply font-primary;
+	}
+
+	.fonts-loaded h1,
+	.fonts-loaded h2,
+	.fonts-loaded h3 {
+		/* stylelint-disable-next-line at-rule-no-deprecated */
+		@apply font-heading;
+	}
+
+	.fonts-loaded h1 {
+		line-height: 100%;
+	}
+
+	.fonts-loaded p {
+		line-height: 137.5%;
+	}
+}
