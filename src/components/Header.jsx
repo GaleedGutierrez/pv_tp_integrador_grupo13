@@ -1,23 +1,20 @@
-import { MenuIcon } from '@app/components/ui/menu';
-import { AppRoutes } from '@models/routes/appRouters.model';
+import { MenuIcon } from '@ui/menu';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router';
 
-import { Navbar } from './Navbar';
-/** @import { IconAnimation } from '@models/domain/IconAnimation.model' */
+import { appRoutes } from '@/routes/appRouters';
+
+import { Navbar } from './Navbar.jsx';
 
 /**
  * Header component
- * @returns {import('react').JSX.Element} The rendered header component with the navigation bar.
+ * @returns The rendered header component with the navigation bar.
  */
 export const Header = () => {
-	/** @type {import('react').RefObject<IconAnimation | null>} */
 	const menuIconReference = useRef(null);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 	/**
-	 * @description This function checks if the menu is currently open or closed.
-	 * @returns {void}
+	 * This function checks if the menu is currently open or closed.
 	 */
 	const handleMenuToggle = () => {
 		if (isMenuOpen) {
@@ -30,7 +27,7 @@ export const Header = () => {
 	};
 
 	return (
-		<header className="z-1 sticky inset-0 flex items-center justify-between gap-4 bg-white p-5 lg:justify-between lg:gap-10 lg:p-7">
+		<header className="z-1 sticky inset-0 flex items-center justify-between gap-4 border-b border-gray-200 bg-white p-5 lg:justify-between lg:gap-10 lg:p-7">
 			<div className="flex items-center gap-4 lg:justify-between lg:gap-10">
 				<button
 					aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
@@ -44,17 +41,17 @@ export const Header = () => {
 				</button>
 				<Link
 					className="font-heading text-2xl"
-					to={AppRoutes.home}
+					to={appRoutes.home.index}
 				>
 					Shop.co
 				</Link>
 			</div>
 			<Navbar isMenuOpen={isMenuOpen} />
 			{/* <div className="flex items-center gap-3">
-				<SearchIcon className="md:hidden" />
-				<CartIcon />
-				<UserIcon />
-			</div> */}
+            <SearchIcon className="md:hidden" />
+            <CartIcon />
+            <UserIcon />
+        </div> */}
 		</header>
 	);
 };

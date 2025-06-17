@@ -23,6 +23,7 @@
 		"verbatimModuleSyntax": true,
 		"checkJs": true,
 
+		/* Paths */
 		"baseUrl": ".",
 		"paths": {
 			"/*": ["./public/*"],
@@ -34,8 +35,8 @@
 			"@application/*": ["./src/application/*"],
 			"@assets/*": ["./src/assets/*"],
 			"@components/*": ["./src/components/*"],
-			"@context/*": ["./src/context/*"],
 			"@constants/*": ["./src/constants/*"],
+			"@context/*": ["./src/context/*"],
 			"@data/*": ["./src/data/*"],
 			"@domain/*": ["./src/domain/*"],
 			"@guard/*": ["./src/guard/*"],
@@ -44,14 +45,20 @@
 			"@images/*": ["./src/assets/images/*"],
 			"@infrastructure/*": ["./src/infrastructure/*"],
 			"@models/*": ["./src/models/*"],
+			"@modules/*": ["./src/modules/*"],
 			"@pages/*": ["./src/pages/*"],
 			"@private/*": ["./src/private/*"],
+			"@ui/*": ["./src/components/ui/*"],
+			"@redux/*": ["./src/redux/*"],
 			"@routes/*": ["./src/routes/*"],
 			"@services/*": ["./src/services/*"],
 			"@state/*": ["./src/state/*"],
+			"@shared": ["src/utils/*"],
+			"@store/*": ["./src/store/*"],
 			"@styles/*": ["./src/styles/*"],
+			"@sections/*": ["./src/sections/*"],
 			"@templates/*": ["./src/templates/*"],
-			"@utils/*": ["./src/utils/*"],
+			"@utils/*": ["src/utils/*"],
 			"@views/*": ["./src/views/*"]
 		}
 	},

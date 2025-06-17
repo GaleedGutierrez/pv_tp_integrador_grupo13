@@ -1,21 +1,10 @@
 /**
- * @typedef {Object} CustomButtonProps
- * @property {React.ReactNode} children - Button content
- * @property {boolean} [isPrimary] - Indicates if the button is primary
- * @property {boolean} [isSecondary] - Indicates if the button is secondary
- */
-
-/**
- * @typedef {CustomButtonProps & React.ButtonHTMLAttributes<HTMLButtonElement>} ButtonProps
- */
-
-/**
  * Simple Button component that accepts all standard button attributes
- * @param {ButtonProps} props - Button props including children
- * @returns {React.ReactElement} The Button component
+ * @param props - Button props including children
+ * @returns The Button component
  */
 export const Button = ({ children, isPrimary, isSecondary, ...properties }) => {
-	const CLASS_NAME = properties.className || '';
+	const CLASS_NAME = properties.className ?? '';
 	const BASE_STYLES =
 		'py-4 w-full rounded-full font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2';
 

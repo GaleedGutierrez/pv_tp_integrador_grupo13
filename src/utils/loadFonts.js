@@ -1,8 +1,7 @@
 /**
- * @function loadFonts
- * @description Generic function to load multiple fonts
- * @param {string[]} fonts - Array of font descriptors
- * @returns {Promise<FontFace[][]>} Promise that resolves with loaded fonts
+ * Generic function to load multiple fonts
+ * @param fonts - Array of font descriptors
+ * @returns Promise that resolves with loaded fonts
  */
 const loadMultipleFonts = (fonts) => {
 	if (!('fonts' in document)) {
@@ -15,10 +14,11 @@ const loadMultipleFonts = (fonts) => {
 };
 
 /**
- * @function loadFonts
- * @description Loads custom fonts and adds a class to the document element when loaded.
- * @param {string[]} fonts - The fonts to load.
- * @returns {void}
+ * Loads custom fonts and adds a class to the document element when loaded.
+ * @param fonts - The fonts to load.
+ * @throws Error If the Font Loading API is not supported or if loading fails.
+ * @example
+ * loadFonts(['12px "CustomFont"', '16px "AnotherFont"']);
  */
 export const loadFonts = (fonts) => {
 	if (sessionStorage.fontsLoaded) {

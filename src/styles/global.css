@@ -2,7 +2,10 @@
 @import "tailwindcss";
 /* stylelint-disable-next-line import-notation */
 @import "tw-animate-css";
+/* stylelint-disable-next-line import-notation */
+@import "./carousel.css";
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @custom-variant dark (&:is(.dark *));
 
 @font-face {
@@ -18,6 +21,7 @@
 	font-display: swap;
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme {
 	--font-fallback:
 		system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", "Noto Sans",
@@ -29,12 +33,14 @@
 	--vw-46: 46vw;
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @utility font-primary-fallback {
 	font-family: var(--font-fallback-primary);
 	letter-spacing: -0.05px;
 	word-spacing: -0.15px;
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @utility font-heading-fallback {
 	font-family: var(--font-fallback-heading);
 	font-weight: 900;
@@ -44,12 +50,14 @@
 	word-spacing: 0.25px;
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @utility font-primary {
 	font-family: Satoshi, var(--font-fallback-primary);
 	letter-spacing: initial;
 	word-spacing: initial;
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @utility font-heading {
 	font-family: IntegralCF, var(--font-fallback-heading);
 	line-height: 100%;
@@ -69,22 +77,22 @@
 		@apply font-primary-fallback;
 	}
 
-	h1,
-	h2,
-	h3 {
+	h1:not(.font-primary),
+	h2:not(.font-primary),
+	h3:not(.font-primary) {
 		/* stylelint-disable-next-line at-rule-no-deprecated */
 		@apply font-heading-fallback;
 	}
 
-	h1 {
+	h1:not(.font-primary) {
 		font-size: clamp(2.25rem, 4vw + 1rem, 4rem);
 	}
 
-	h2 {
+	h2:not(.font-primary) {
 		font-size: clamp(2rem, 4vw + 1rem, var(--text-5xl));
 	}
 
-	h3 {
+	h3:not(.font-primary) {
 		font-size: clamp(2rem, 4vw + 1rem, 2.5rem);
 	}
 
@@ -93,9 +101,9 @@
 		@apply font-primary;
 	}
 
-	.fonts-loaded h1,
-	.fonts-loaded h2,
-	.fonts-loaded h3 {
+	.fonts-loaded h1:not(.font-primary),
+	.fonts-loaded h2:not(.font-primary),
+	.fonts-loaded h3:not(.font-primary) {
 		/* stylelint-disable-next-line at-rule-no-deprecated */
 		@apply font-heading;
 	}
@@ -109,6 +117,7 @@
 	}
 }
 
+/* stylelint-disable-next-line at-rule-no-unknown */
 @theme inline {
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);

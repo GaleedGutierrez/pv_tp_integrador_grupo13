@@ -1,38 +1,46 @@
-import { AppRoutes } from '@models/routes/appRouters.model';
-import { Home } from '@views/Home';
-import { RoutesWithNotFound } from '@views/NotFoundPage';
+import { appRoutes } from '@routes/appRouters';
+import { Home } from '@views/Home/index';
+import { Layout } from '@views/Layout';
 import { BrowserRouter, Route } from 'react-router';
+
+import { Favorites } from './views/Favorites';
+import { RoutesWithNotFound } from './views/NotFoundPage';
+import { ProductsDetails } from './views/ProductsDetails';
 
 /**
  * Main application router.
  * This component sets up the routing for the application using React Router.
  * It defines the routes and their corresponding components.
- * @returns {import('react').JSX.Element} The main application router component
  */
 function AppRouter() {
 	return (
 		<BrowserRouter>
 			<RoutesWithNotFound>
 				<Route
-					element={<Home />}
-					path={AppRoutes.home}
-				/>
-				{/* <Route
-					element={<Favorites />}
-					path={AppRoutes.favorites}
-				/> */}
-				{/* <Route
-					element={<ProductsDetails />}
-					path={AppRoutes.products.productsDetails}
-				/> */}
-				{/* <Route
-						element={<AddNewProduct />}
-						path={AppRoutes.products.addNewProduct}
-					/> */}
-				{/* <Route
-					element={<UpdateProduct />}
-					path={AppRoutes.products.updateProduct}
-				/> */}
+					element={<Layout />}
+					path={appRoutes.home.index}
+				>
+					<Route
+						element={<Home />}
+						path={appRoutes.home.index}
+					/>
+					<Route
+						element={<Favorites />}
+						path={appRoutes.favorites.list}
+					/>
+					<Route
+						element={<ProductsDetails />}
+						path={appRoutes.products.routes.details}
+					/>
+					{/* <Route
+            element={<CreateProduct />}
+            path={appRoutes.products.create}
+        /> */}
+					{/* <Route
+        element={<UpdateProduct />}
+        path={AppRoutes.products.updateProduct}
+    /> */}
+				</Route>
 			</RoutesWithNotFound>
 		</BrowserRouter>
 	);

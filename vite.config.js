@@ -13,13 +13,16 @@ export default defineConfig({
 		jsconfigPaths(),
 		tailwindcss(),
 		svgr({
+			// svgr options: https://react-svgr.com/docs/options/
 			svgrOptions: {
 				exportType: 'default',
 				ref: true,
 				svgo: false,
 				titleProp: true,
+				plugins: ['@svgr/plugin-jsx'],
 			},
-			include: '**/*.svg',
+			include: '**/*.svg?react',
+			exclude: '**/*.svg',
 		}),
 	],
 	server: {

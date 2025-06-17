@@ -1,89 +1,80 @@
 import { Component } from 'react';
 
 /**
- * @typedef {Object} ErrorBoundaryState
- * @property {boolean} hasError - Indicates if an error has occurred
+ * This componente captures errors in the child component tree
+ * and shows an alternative UI when an error occurs.
  */
-
-/**
- * @typedef {Object} ErrorBoundaryProperties
- * @property {React.ReactNode} children - Child components to render
- * @property {React.ReactNode} [fallback] - Optional fallback UI to show when error occurs
- */
-
-/**
- * ErrorBoundary component that catches JavaScript errors anywhere in the child component tree,
- * logs those errors, and displays a fallback UI instead of the component tree that crashed.
- *
- * @class ErrorBoundary
- * @extends {Component<ErrorBoundaryProperties, ErrorBoundaryState>}
- */
-class ErrorBoundary extends Component {
+export class ErrorBoundary extends Component {
 	/**
-	 * Static method called when an error is thrown during rendering.
-	 * Updates the state to trigger the error UI on the next render.
-	 *
-	 * @static
-	 * @param {Error} error - The error that was thrown
-	 * @returns {ErrorBoundaryState} New state object
+	 * Static method that updates the state when an error occurs
 	 */
 	static getDerivedStateFromError(error) {
-		console.info(`Derived  Error: ${error}`);
+		// We log the error for debugging
+		console.error('[ErrorBoundary] Error detectado:', error);
 
 		return { hasError: true };
 	}
 
-	/**
-	 * Creates an instance of ErrorBoundary.
-	 * @param {ErrorBoundaryProperties} properties - The component props
-	 */
 	constructor(properties) {
 		super(properties);
-
-		/** @type {ErrorBoundaryState} */
 		this.state = { hasError: false };
 	}
 
 	/**
-	 * Lifecycle method called when an error has been thrown by a descendant component.
-	 * Used for logging error information.
-	 *
-	 * @param {Error} error - The error that was thrown
-	 * @param {React.ErrorInfo} errorInfo - Object containing information about which component threw the error
-	 * @returns {void}
+	 * Method that runs when an error is caught
 	 */
 	componentDidCatch(error, errorInfo) {
-		console.info(`Error: ${error}`);
-		console.info(`Error info: ${JSON.stringify(errorInfo)}`);
+		const { onError } = this.props;
+
+		// You can also log the error to an error reporting service
+		console.error('[ErrorBoundary] Error:', {
+			error,
+			componentStack: errorInfo.componentStack,
+		});
+		this.setState({ hasError: true });
+
+		// If there is a custom error handler, we run it
+		if (onError) {
+			onError(error, errorInfo);
+		}
 	}
 
 	/**
-	 * Renders either the fallback UI or the children components.
-	 *
-	 * @returns {React.ReactNode} The component to render
+	 * Reset the error state and show the normal content again
 	 */
+	handleResetErrorBoundary() {
+		this.setState({ hasError: false });
+	}
+
+	/**
+	 * Default UI when an error occurs
+	 */
+	defaultErrorUi() {
+		return (
+			<div className="error-boundary-container">
+				<h1>¡Ups! Algo salió mal</h1>
+				<button
+					className="error-boundary-button"
+					onClick={this.handleResetErrorBoundary.bind(this)}
+				>
+					Volver a intentar
+				</button>
+			</div>
+		);
+	}
+
 	render() {
 		const { hasError } = this.state;
 		const { children, fallback } = this.props;
 
-		if (hasError) {
-			return (
-				fallback ?? (
-					<h1
-						style={{
-							textAlign: 'center',
-							marginTop: '20px',
-							fontSize: '3rem',
-						}}
-					>
-						Ops! Hubo un error ;)
-					</h1>
-				)
-			);
+		if (!hasError) {
+			return children;
 		}
 
-		return children;
+		if (fallback) {
+			return fallback;
+		}
+
+		return this.defaultErrorUi();
 	}
 }
-
-export default ErrorBoundary;
