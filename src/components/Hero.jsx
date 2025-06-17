@@ -54,12 +54,12 @@ export const Hero = () => (
 				<picture>
 					<source
 						media="(min-width: 768px)"
-						srcSet="/images/hero-large.jpg"
+						srcSet="/images/hero-large.webp"
 					/>
 					<img
 						alt="Una pareja con ropa cool"
 						className="lg:h-(--vw-46) h-(--vw-114) w-full object-cover object-top"
-						src="/images/hero-small.jpg"
+						src="/images/hero-small.webp"
 					/>
 				</picture>
 				<StarIcon className="w-11 lg:w-14 absolute inset-x-1/32 inset-y-1/3" />
