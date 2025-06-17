@@ -29,7 +29,7 @@ export const Hero = () => (
 				>
 					Compra ahora
 				</Button>
-				<div className="mt-5 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+				<div className="mt-5 gap-4 lg:justify-start flex flex-wrap items-center justify-center">
 					<div>
 						<h3 className="font-primary text-2xl font-bold lg:text-4xl">
 							200+
@@ -58,15 +58,15 @@ export const Hero = () => (
 					/>
 					<img
 						alt="Una pareja con ropa cool"
-						className="h-(--vw-114) lg:h-(--vw-46) w-full object-cover object-top"
+						className="lg:h-(--vw-46) h-(--vw-114) w-full object-cover object-top"
 						src="/images/hero-small.jpg"
 					/>
 				</picture>
-				<StarIcon className="inset-x-1/32 absolute inset-y-1/3 w-11 lg:w-14" />
-				<StarIcon className="inset-y-1/32 w-18 lg:inset-x-7/10 lg:w-26 absolute inset-x-3/4" />
+				<StarIcon className="w-11 lg:w-14 absolute inset-x-1/32 inset-y-1/3" />
+				<StarIcon className="w-18 lg:inset-x-7/10 lg:w-26 absolute inset-x-3/4 inset-y-1/32" />
 			</div>
 		</div>
-		<div className="flex flex-wrap items-center justify-center gap-8 bg-gray-950 px-4 py-10 md:justify-around">
+		<div className="gap-8 bg-gray-950 px-4 py-10 md:justify-around flex flex-wrap items-center justify-center">
 			<VersaceLogo className="max-w-29" />
 			<ZaraLogo className="max-w-16" />
 			<GucciLogo className="max-w-27" />
