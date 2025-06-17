@@ -28,8 +28,8 @@ export const Header = () => {
 	};
 
 	return (
-		<header className="inset-0 gap-4 border-gray-200 bg-white p-5 lg:justify-between lg:gap-10 lg:p-7 sticky z-1 flex items-center justify-between border-b">
-			<div className="gap-4 lg:justify-between lg:gap-10 flex items-center">
+		<header className="z-1 sticky inset-0 flex items-center justify-between gap-4 border-b border-gray-200 bg-white p-5 lg:justify-between lg:gap-10 lg:p-7">
+			<div className="flex items-center gap-4 lg:justify-between lg:gap-10">
 				<button
 					aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
 					className="h-7 w-7 lg:hidden"

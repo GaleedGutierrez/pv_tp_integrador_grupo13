@@ -22,7 +22,7 @@ export const Footer = () => (
 						enorgullece llevar. De mujer a hombre.
 					</p>
 				</div>
-				<div className="my-5 gap-3 flex">
+				<div className="my-5 flex gap-3">
 					<TwitterIcon />
 					<FacebookIcon />
 					<InstagramIcon />
@@ -36,10 +36,10 @@ export const Footer = () => (
 					</Link>
 				</div>
 			</div>
-			<div className="gap-10 lg:justify-items-center grid grid-cols-[repeat(auto-fit,minmax(10rem,1fr))]">
+			<div className="grid grid-cols-[repeat(auto-fit,minmax(10rem,1fr))] gap-10 lg:justify-items-center">
 				<div>
 					<h3 className="font-primary text-lg font-bold">Compañía</h3>
-					<div className="gap-3 flex flex-col">
+					<div className="flex flex-col gap-3">
 						<a href="#">Acerca de nosotros</a>
 						<a href="#">Reportaje</a>
 						<a href="#">Trabajos</a>
@@ -48,7 +48,7 @@ export const Footer = () => (
 				</div>
 				<div>
 					<h3 className="font-primary text-lg font-bold">Ayuda</h3>
-					<div className="gap-3 flex flex-col">
+					<div className="flex flex-col gap-3">
 						<a href="#">Atención al cliente</a>
 						<a href="#">Seguimiento de envió</a>
 						<a href="#">Términos y condiciones</a>
@@ -57,7 +57,7 @@ export const Footer = () => (
 				</div>
 				<div>
 					<h3 className="font-primary text-lg font-bold">FAQ</h3>
-					<div className="gap-3 flex flex-col">
+					<div className="flex flex-col gap-3">
 						<a href="#">Cuenta</a>
 						<a href="#">Envíos</a>
 						<a href="#">Pedidos</a>
@@ -66,7 +66,7 @@ export const Footer = () => (
 				</div>
 				<div>
 					<h3 className="font-primary text-lg font-bold">Recursos</h3>
-					<div className="gap-3 flex flex-col">
+					<div className="flex flex-col gap-3">
 						<a href="#">E-book gratis</a>
 						<a href="#">Tutorial para desarrollo</a>
 						<a href="#">Blog</a>
@@ -75,9 +75,9 @@ export const Footer = () => (
 				</div>
 			</div>
 		</div>
-		<div className="mt-10 gap-4 border-gray-400 pt-4 lg:flex-row lg:justify-between flex flex-col items-center border-t-1">
+		<div className="border-t-1 mt-10 flex flex-col items-center gap-4 border-gray-400 pt-4 lg:flex-row lg:justify-between">
 			<h4>Shop.co © 2000-2023, All Rights Reserved</h4>
-			<div className="max-w-md gap-2 flex items-center justify-center">
+			<div className="flex max-w-md items-center justify-center gap-2">
 				<VisaBadge className="w-full" />
 				<MasterCardBadge className="w-full" />
 				<PayPalBadge className="w-full" />
