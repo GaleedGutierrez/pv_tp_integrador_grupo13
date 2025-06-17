@@ -2,7 +2,8 @@ import { MenuIcon } from '@ui/menu';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router';
 
-import { appRoutes } from '@/routes/appRouters';
+// @ts-ignore
+import { appRoutes } from '@routes/appRouters';
 
 import { Navbar } from './Navbar.jsx';
 
@@ -27,8 +28,8 @@ export const Header = () => {
 	};
 
 	return (
-		<header className="z-1 sticky inset-0 flex items-center justify-between gap-4 border-b border-gray-200 bg-white p-5 lg:justify-between lg:gap-10 lg:p-7">
-			<div className="flex items-center gap-4 lg:justify-between lg:gap-10">
+		<header className="inset-0 gap-4 border-gray-200 bg-white p-5 lg:justify-between lg:gap-10 lg:p-7 sticky z-1 flex items-center justify-between border-b">
+			<div className="gap-4 lg:justify-between lg:gap-10 flex items-center">
 				<button
 					aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
 					className="h-7 w-7 lg:hidden"
