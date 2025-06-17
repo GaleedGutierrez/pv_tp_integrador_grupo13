@@ -17,33 +17,6 @@ electrónicos, joyería). La aplicación está diseñada con principios de
 **arquitectura hexagonal**, **screaming architecture** y **vertical slicing**
 para garantizar escalabilidad, mantenibilidad y separación de responsabilidades.
 
-<<<<<<< HEAD
-### 🔭 Objetivos del Proyecto
-
-- **Académico**: Demostrar dominio de React y Redux
-- **Técnico**: Implementar un sistema robusto con tipado JSDoc, validaciones y
-  gestión de estado.
-- **Práctico**: Crear una experiencia de usuario intuitiva y responsive.
-
-### 👥 Equipo de Desarrollo
-
-| Desarrollador        | GitHub                       | Responsabilidades   |
-| -------------------- | ---------------------------- | ------------------- |
-| **Galeed Gutiérrez** | [@GaleedGutierrez][galeed]   | Arquitectura, Redux |
-| **Alfredo González** | [@Ezequiel12354s][alfredo]   | UI, Styling         |
-| **Enzo Condori**     | [@IsaiasCondori][enzo]       | Vistas, Navegación  |
-| **Franklin Vázquez** | [@VasquezFranklin][franklin] | Hooks, Utilidades   |
-
-[galeed]: https://github.com/GaleedGutierrez
-[alfredo]: https://github.com/Ezequiel12354s
-[enzo]: https://github.com/IsaiasCondori
-[franklin]: https://github.com/VasquezFranklin
-
-## 🏗️ Arquitectura y Patrones de Diseño
-
-### Arquitectura Hexagonal (Ports & Adapters)
-
-=======
 ## 📷 Screenshots
 
 ### 💻 Desktop
@@ -87,7 +60,6 @@ para garantizar escalabilidad, mantenibilidad y separación de responsabilidades
 
 ### Arquitectura Hexagonal (Ports & Adapters)
 
->>>>>>> 4c8163147f7b3cc01f46521f79d8b795b45ff213
 La aplicación implementa **arquitectura hexagonal** para garantizar la
 separación entre la lógica de negocio y los detalles de implementación:
 
