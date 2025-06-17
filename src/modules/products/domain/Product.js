@@ -1,3 +1,21 @@
+// @ts-nocheck
+/**
+ * @typedef {Object} Product
+ * @property {number} id - Identificador único del producto
+ * @property {string} title - Nombre del producto
+ * @property {number} price - Precio en USD
+ * @property {string} description - Descripción detallada
+ * @property {ProductCategory} category - Categoría del producto
+ * @property {string} image - URL de la imagen
+ * @property {ProductRating} rating - Información de valoración
+ */
+
+/**
+ * @typedef {Object} ProductRating
+ * @property {number} rate - Valoración promedio (1-5)
+ * @property {number} count - Número total de valoraciones
+ */
+
 /**
  * Creates a new Product instance
  * @returns The created product

@@ -1,3 +1,6 @@
+/**
+ * @enum {string}
+ */
 export const ProductCategory = {
 	Electronics: 'electronics',
 	Jewelry: 'jewelery',
