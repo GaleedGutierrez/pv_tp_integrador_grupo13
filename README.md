@@ -462,7 +462,7 @@ npm run preview
 - **GitHub Pages**: Para proyectos públicos
 - **Railway**: Para proyectos con backend -->
 
-## 🔧 Configuración Avanzada
+<!-- ## 🔧 Configuración Avanzada -->
 
 <!-- ### Variables de Entorno
 
