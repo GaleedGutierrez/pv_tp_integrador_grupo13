@@ -1,4 +1,5 @@
-// @ts-ignore
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import { appRoutes } from '@routes/appRouters';
 import { MenuIcon } from '@ui/menu';
 import { useRef, useState } from 'react';
