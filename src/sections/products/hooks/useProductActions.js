@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useAppDispatch } from '@hooks/useAppDispatch';
 
 // import { useProductDependencies } from '../hooks/useProductDependencies.jsx';
@@ -10,6 +9,7 @@ import {
 // const { getAllProducts } = useProductDependencies();
 export const useProductActions = () => {
 	const dispatch = useAppDispatch();
+	/** @param {string} id - ID of product */
 	const deleteProduct = (id) => {
 		dispatch(deleteProductById(id));
 	};
