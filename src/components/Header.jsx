@@ -1,9 +1,8 @@
+// @ts-ignore
+import { appRoutes } from '@routes/appRouters';
 import { MenuIcon } from '@ui/menu';
 import { useRef, useState } from 'react';
 import { Link } from 'react-router';
-
-// @ts-ignore
-import { appRoutes } from '@routes/appRouters';
 
 import { Navbar } from './Navbar.jsx';
 
