@@ -1,4 +1,6 @@
 /* eslint-disable unicorn/filename-case */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
 /* eslint-disable check-file/folder-naming-convention */
 /* eslint-disable unicorn/prevent-abbreviations */
