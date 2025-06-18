@@ -1,4 +1,4 @@
-import js from '@eslint/js';
+import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
 import vitest from '@vitest/eslint-plugin';
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
@@ -18,10 +18,12 @@ import sortClassMembers from 'eslint-plugin-sort-class-members';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
-export default [
+export default tseslint.config(
+	eslint.configs.recommended,
+	tseslint.configs.recommended,
 	importX.flatConfigs.recommended,
-
 	pluginSecurity.configs.recommended,
 	jsxA11y.flatConfigs.recommended,
 	eslintPluginPrettierRecommended,
@@ -63,6 +65,7 @@ export default [
 			},
 
 			parserOptions: {
+				project: './jsconfig.json',
 				ecmaVersion: 'latest',
 				ecmaFeatures: { jsx: true },
 				sourceType: 'module',
@@ -82,7 +85,6 @@ export default [
 		},
 
 		rules: {
-			...js.configs.recommended.rules,
 			'prettier/prettier': 'error',
 
 			'array-callback-return': [
@@ -574,6 +576,7 @@ export default [
 	},
 	{
 		...jsdoc.configs['flat/recommended'],
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		// @ts-ignore
 		...sortClassMembers.configs['flat/recommended'],
 		files: ['**/*.js', '**/*.mjs', '**/*.cjs'],
@@ -641,4 +644,4 @@ export default [
 			'playwright/no-commented-out-tests': 'warn',
 		},
 	},
-];
+);
