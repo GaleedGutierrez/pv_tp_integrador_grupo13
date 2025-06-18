@@ -261,7 +261,7 @@ pv_tp_integrador_grupo13/
   infraestructura.
 - **Tipado con JSDoc**: Documentación y tipado completo en JavaScript.
 - **Gestión de Estado**: Redux Toolkit con slices organizados por dominio.
-- **Persistencia**: LocalStorage para favoritos y estado de la aplicación.
+- **Persistencia**: localStorage para favoritos y estado de la aplicación.
 <!-- - **Validaciones**: Zod + React Hook Form para formularios robustos. -->
 - **Animaciones**: Motion para transiciones fluidas y feedback visual.
 - **Optimización**: Lazy loading, suspense y optimizaciones de rendimiento.
