@@ -7,3 +7,7 @@ export const ProductCategory = {
 	MensClothing: "men's clothing",
 	WomensClothing: "women's clothing",
 };
+
+/**
+ * @typedef {typeof ProductCategory[keyof typeof ProductCategory]} TypeProductCategory
+ */

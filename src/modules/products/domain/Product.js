@@ -1,43 +1,45 @@
-// @ts-nocheck
 /**
- * @typedef {Object} Product
- * @property {number} id - Identificador único del producto
- * @property {string} title - Nombre del producto
- * @property {number} price - Precio en USD
- * @property {string} description - Descripción detallada
- * @property {ProductCategory} category - Categoría del producto
- * @property {string} image - URL de la imagen
- * @property {ProductRating} rating - Información de valoración
+ * Represents the rating information for a product.
+ * @typedef {Object} Rating
+ * @property {number} rate - Average rating score
+ * @property {number} count - Number of ratings received
  */
 
 /**
- * @typedef {Object} ProductRating
- * @property {number} rate - Valoración promedio (1-5)
- * @property {number} count - Número total de valoraciones
+ * API Product data from external source (before transformation)
+ * @typedef {Object} ApiProduct
+ * @property {number} id - Unique identifier for the product
+ * @property {string} title - Display name of the product
+ * @property {number} price - Price as number (will be formatted to string)
+ * @property {string} description - Detailed description of the product
+ * @property {string} category - Product category string
+ * @property {string} image - URL or path to the product image
+ * @property {Rating} rating - Rating information for the product
  */
 
 /**
  * Creates a new Product instance
- * @returns The created product
+ * @returns {Product} The created product
  */
 export class Product {
-	/** Unique identifier for the product */
+	/** @type {number} Unique identifier for the product */
 	id;
-	/** Display name of the product */
+	/** @type {string} Display name of the product */
 	title;
-	/** Price as a string (e.g., "$19.99") */
+	/** @type {string} Price as a string (e.g., "$19.99") */
 	price;
-	/** Detailed description of the product */
+	/** @type {string} Detailed description of the product */
 	description;
-	/** Product category from predefined options */
+	/** @type {string} Product category from predefined options */
 	category;
-	/** URL or path to the product image */
+	/** @type {string} URL or path to the product image */
 	image;
-	/** Represents the rating information for a product. */
+	/** @type {Rating} Represents the rating information for a product. */
 	rating;
+
 	/**
 	 * Creates a new Product instance.
-	 * @param parameters - The parameters to initialize the product.
+	 * @param {ApiProduct} parameters - The parameters to initialize the product.
 	 */
 	constructor(parameters) {
 		const { id, title, price, description, category, image, rating } =

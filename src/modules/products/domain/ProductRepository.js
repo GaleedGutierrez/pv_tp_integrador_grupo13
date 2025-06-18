@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable unused-imports/no-unused-vars */
 /**
  * @fileoverview Product Repository Interface
@@ -75,7 +76,7 @@ const ProductRepository = {
 	 * @throws {Error} When network request fails or data source is unavailable
 	 * @since 1.0.0
 	 */
-	getAll: () => {},
+	getAll: () => Promise.resolve(void 0),
 
 	/**
 	 * @function searchById
@@ -95,7 +96,7 @@ const ProductRepository = {
 	 * @throws {Error} When id is invalid or data source is unavailable
 	 * @since 1.0.0
 	 */
-	searchById: (id) => {},
+	searchById: (id) => Promise.resolve(void 0),
 
 	/**
 	 * @function save
@@ -122,7 +123,7 @@ const ProductRepository = {
 	 * @throws {Error} When product data is invalid or creation fails
 	 * @since 1.0.0
 	 */
-	save: (product) => {},
+	save: (product) => Promise.resolve(void 0),
 
 	/**
 	 * @function update
@@ -150,7 +151,7 @@ const ProductRepository = {
 	 * @throws {Error} When product doesn't exist or update fails
 	 * @since 1.0.0
 	 */
-	update: (product) => {},
+	update: (product) => Promise.resolve(void 0),
 
 	/**
 	 * @function delete
@@ -170,7 +171,7 @@ const ProductRepository = {
 	 * @throws {Error} When product doesn't exist or deletion fails
 	 * @since 1.0.0
 	 */
-	delete: (id) => {},
+	delete: (id) => Promise.resolve(),
 
 	/**
 	 * @function getAllCategories
@@ -189,7 +190,7 @@ const ProductRepository = {
 	 * @throws {Error} When data source is unavailable
 	 * @since 1.0.0
 	 */
-	getAllCategories: () => {},
+	getAllCategories: () => Promise.resolve(void 0),
 
 	/**
 	 * @function getByCategory
@@ -207,7 +208,7 @@ const ProductRepository = {
 	 * @throws {Error} When category is invalid or data source is unavailable
 	 * @since 1.0.0
 	 */
-	getByCategory: (category) => {},
+	getByCategory: (category) => Promise.resolve(void 0),
 };
 
 // Export for ES6 modules
