@@ -1,6 +1,7 @@
-import type { UserConfig } from '@commitlint/types';
+/** @import { UserConfig } from '@commitlint/types' */
 
-const Configuration: UserConfig = {
+/** @type {UserConfig}  */
+const Configuration = {
 	extends: ['@commitlint/config-conventional'],
 	formatter: '@commitlint/format',
 };
