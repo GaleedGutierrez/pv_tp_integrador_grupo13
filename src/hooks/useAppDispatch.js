@@ -1,3 +1,1 @@
-import { useDispatch } from 'react-redux';
-
-export const useAppDispatch = useDispatch;
+export { useDispatch as useAppDispatch } from 'react-redux';
