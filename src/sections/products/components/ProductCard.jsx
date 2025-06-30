@@ -1,11 +1,19 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import StarIcon from '@assets/icons/star-yellow.svg?react';
 import { HeartIcon } from '@components/ui/heart';
 import { SquareArrowUpIcon } from '@components/ui/square-arrow-up';
 import { useAppSelector } from '@hooks/useAppSelector';
 import { appRoutes } from '@routes/appRouters';
 import { useFavoritesActions } from '@sections/favorites/hooks/useFavoritesActions';
+import { DeleteIcon } from '@ui/delete';
+import { SquarePenIcon } from '@ui/square-pen';
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { toast } from 'sonner';
+
+import { useProductActions } from '../hooks/useProductActions';
 
 /**
  * Renders star rating with CSS-based half stars using Tailwind
@@ -46,9 +54,9 @@ const renderStars = (rating) => {
  * @returns The rendered ProductCard component.
  * */
 export const ProductCard = ({ product }) => {
-	const { id, title, price, image, rating } = product;
-	// const { deleteProduct } = useProductActions();
+	const { deleteProduct } = useProductActions();
 	const { addToFavorite, deleteFavoriteById } = useFavoritesActions();
+	const { id, title, price, image, rating } = product;
 	const FAVORITES_PRODUCTS = useAppSelector((state) => state.favorites);
 	const [isFavorite, setIsFavorite] = useState(
 		FAVORITES_PRODUCTS.some((product) => product.id === id),
@@ -75,42 +83,49 @@ export const ProductCard = ({ product }) => {
 			<h1 className="font-primary line-clamp-1 text-lg font-bold lg:text-xl">
 				{title}
 			</h1>
-			<div className="flex items-center gap-1">
-				{renderStars(rating.rate)}
-				<p className="text-sm">{rating.rate}/5</p>
-			</div>
+			{rating && (
+				<div className="flex items-center gap-1">
+					{renderStars(rating.rate)}
+					<p className="text-sm">{rating.rate}/5</p>
+				</div>
+			)}
 			<div className="flex items-center justify-between gap-2">
 				<p className="text-lg font-bold lg:text-xl">{price}</p>
 				<div className="flex items-center">
 					<Link
 						className="flex h-6 w-6 items-center justify-center"
 						title="Ver producto"
-						to={appRoutes.products.buildUrl.details(id)}
+						to={appRoutes.private.products.buildUrl.details(id)}
 					>
 						<SquareArrowUpIcon
-							className="text-green-700"
+							className="flex items-center justify-center text-green-700"
 							size={22}
 						/>
 					</Link>
-					{/* <button
-            className="h-6 w-6"
-            title="Editar producto"
-        >
-            <SquarePenIcon
-                className="flex items-center justify-center text-yellow-700"
-                size={22}
-            />
-        </button> */}
-					{/* <button
-            className="h-6 w-6"
-            title="Borrar producto"
-            onClick={() => deleteProduct(id)}
-        >
-            <DeleteIcon
-                className="flex items-center justify-center text-red-700"
-                size={22}
-            />
-        </button> */}
+					<Link
+						className="flex h-6 w-6 items-center justify-center"
+						title="Editar producto"
+						to={appRoutes.private.products.buildUrl.update(id)}
+					>
+						<SquarePenIcon
+							className="flex items-center justify-center text-yellow-700"
+							size={22}
+						/>
+					</Link>
+					<button
+						className="flex h-6 w-6 items-center justify-center"
+						title="Borrar producto"
+						onClick={() => {
+							deleteProduct(id);
+							deleteFavoriteById(id);
+							toast.success('Producto eliminado correctamente.');
+						}}
+					>
+						<DeleteIcon
+							className="flex items-center justify-center text-red-700"
+							size={22}
+						/>
+					</button>
 				</div>
 				<button
 					className="absolute inset-y-2 end-2 h-6 w-6"
@@ -119,7 +134,12 @@ export const ProductCard = ({ product }) => {
 							? 'Quitar de favoritos'
 							: 'Agregar a favoritos'
 					}
-					onClick={() => handleFavoriteToggle(product)}
+					onClick={() => {
+						handleFavoriteToggle(product);
+						toast.success(
+							`Producto ${isFavorite ? 'quitado de favoritos.' : 'agregado a favoritos.'}`,
+						);
+					}}
 				>
 					<HeartIcon
 						className="text-rose-400"
