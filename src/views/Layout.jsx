@@ -1,5 +1,6 @@
 import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
+import { Toaster } from '@ui/sonner';
 import { Outlet } from 'react-router';
 
 /**
@@ -13,5 +14,13 @@ export const Layout = () => (
 			<Outlet />
 		</main>
 		<Footer />
+		<Toaster
+			toastOptions={{
+				classNames: {
+					title: '!text-base',
+					actionButton: '!text-base',
+				},
+			}}
+		/>
 	</div>
 );
