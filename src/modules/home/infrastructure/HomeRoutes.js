@@ -1,3 +1,1 @@
-export const HomeRoutes = {
-	index: '/',
-};
+export const HomeRoutes = '/';
