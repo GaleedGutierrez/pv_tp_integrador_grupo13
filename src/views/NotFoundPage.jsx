@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import { Footer } from '@components/Footer';
 import { Header } from '@components/Header';
 import { Navigate, Route, Routes } from 'react-router';
@@ -10,7 +13,7 @@ import { Navigate, Route, Routes } from 'react-router';
 const NotFoundPage = () => (
 	<>
 		<Header />
-		<main>
+		<main className="flex h-dvh flex-col items-center justify-center gap-4">
 			<h1 className="text-center">Ups! Página no encontrada</h1>
 			<h2 className="text-center">Error 404</h2>
 		</main>
@@ -28,13 +31,14 @@ const NotFoundPage = () => (
 export const RoutesWithNotFound = ({ children }) => (
 	<Routes>
 		{children}
-		<Route
-			element={<Navigate to="/404" />}
-			path="*"
-		/>
+
 		<Route
 			element={<NotFoundPage />}
 			path="/404"
+		/>
+		<Route
+			element={<Navigate to="/404" />}
+			path="*"
 		/>
 	</Routes>
 );
