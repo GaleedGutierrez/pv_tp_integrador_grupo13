@@ -1,45 +1,28 @@
-/**
- * Represents the rating information for a product.
- * @typedef {Object} Rating
- * @property {number} rate - Average rating score
- * @property {number} count - Number of ratings received
- */
-
-/**
- * API Product data from external source (before transformation)
- * @typedef {Object} ApiProduct
- * @property {number} id - Unique identifier for the product
- * @property {string} title - Display name of the product
- * @property {number} price - Price as number (will be formatted to string)
- * @property {string} description - Detailed description of the product
- * @property {string} category - Product category string
- * @property {string} image - URL or path to the product image
- * @property {Rating} rating - Rating information for the product
- */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 
 /**
  * Creates a new Product instance
- * @returns {Product} The created product
+ * @returns The created product
  */
 export class Product {
-	/** @type {number} Unique identifier for the product */
+	/** Unique identifier for the product */
 	id;
-	/** @type {string} Display name of the product */
+	/** Display name of the product */
 	title;
-	/** @type {string} Price as a string (e.g., "$19.99") */
+	/** Price as a string (e.g., "$19.99") */
 	price;
-	/** @type {string} Detailed description of the product */
+	/** Detailed description of the product */
 	description;
-	/** @type {string} Product category from predefined options */
+	/** Product category from predefined options */
 	category;
-	/** @type {string} URL or path to the product image */
+	/** URL or path to the product image */
 	image;
-	/** @type {Rating} Represents the rating information for a product. */
+	/** Represents the rating information for a product. */
 	rating;
-
 	/**
 	 * Creates a new Product instance.
-	 * @param {ApiProduct} parameters - The parameters to initialize the product.
+	 * @param parameters - The parameters to initialize the product.
 	 */
 	constructor(parameters) {
 		const { id, title, price, description, category, image, rating } =

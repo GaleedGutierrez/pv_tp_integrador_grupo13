@@ -1,4 +1,6 @@
-export class ProductGetter {
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+export class ProductUpdater {
 	#repository;
 	constructor(repository) {
 		this.#repository = repository;

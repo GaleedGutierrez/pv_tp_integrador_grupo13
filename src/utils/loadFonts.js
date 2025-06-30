@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 /**
  * Generic function to load multiple fonts
  * @param fonts - Array of font descriptors

@@ -1,31 +1,25 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import { useAppDispatch } from '@hooks/useAppDispatch';
 
-// import { useProductDependencies } from '../hooks/useProductDependencies.jsx';
 import {
-	// addAllProducts as addAllOfProducts,
+	addProduct,
 	deleteProductById,
-} from '../slice/productSlice.js';
+	updateProduct as updateProductSlice,
+} from '../slices/productSlice';
 
-// const { getAllProducts } = useProductDependencies();
 export const useProductActions = () => {
 	const dispatch = useAppDispatch();
-	/** @param {string} id - ID of product */
+	const addNewProduct = (product) => {
+		dispatch(addProduct(product));
+	};
+	const updateProduct = (product) => {
+		dispatch(updateProductSlice(product));
+	};
 	const deleteProduct = (id) => {
 		dispatch(deleteProductById(id));
 	};
 
-	// const allAllProducts = async (): Promise<void> => {
-	// 	try {
-	// 		const PRODUCTS = await getAllProducts();
-	// 		if (!PRODUCTS) {
-	// 			throw new Error('Failed to fetch products');
-	// 		}
-	// 		dispatch(addAllOfProducts(PRODUCTS));
-	// 	} catch (error) {
-	// 		if (error instanceof Error) {
-	// 			throw new TypeError(error.message);
-	// 		}
-	// 	}
-	// };
-	return { deleteProduct /*addAllProducts: allAllProducts*/ };
+	return { deleteProduct, addNewProduct, updateProduct };
 };

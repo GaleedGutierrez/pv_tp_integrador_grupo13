@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+
 import ApplePayBadege from '@assets/icons/badge-apple-pay.svg?react';
 import GooglePayBadge from '@assets/icons/badge-google-pay.svg?react';
 import MasterCardBadge from '@assets/icons/badge-mastercard.svg?react';
@@ -6,10 +7,10 @@ import PayPalBadge from '@assets/icons/badge-paypal.svg?react';
 import VisaBadge from '@assets/icons/badge-visa.svg?react';
 import { Link } from 'react-router';
 
-import { FacebookIcon } from './ui/facebook.jsx';
-import { GithubIcon } from './ui/github.jsx';
-import { InstagramIcon } from './ui/instagram.jsx';
-import { TwitterIcon } from './ui/twitter.jsx';
+import { FacebookIcon } from './ui/facebook';
+import { GithubIcon } from './ui/github';
+import { InstagramIcon } from './ui/instagram';
+import { TwitterIcon } from './ui/twitter';
 
 export const Footer = () => (
 	<footer className="lg:py- py-17 bg-gray-100 px-4 lg:px-6">

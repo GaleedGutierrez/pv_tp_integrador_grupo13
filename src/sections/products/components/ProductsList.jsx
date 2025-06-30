@@ -1,4 +1,7 @@
-import { ProductCard } from './ProductCard.jsx';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
+import { ProductCard } from './ProductCard';
 
 export const ProductsList = ({ products, className }) => (
 	<>

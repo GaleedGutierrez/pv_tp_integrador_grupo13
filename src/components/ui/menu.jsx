@@ -1,9 +1,10 @@
 /* eslint-disable no-nested-ternary */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-nocheck
-/* eslint-disable check-file/folder-naming-convention */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 /* eslint-disable unicorn/prevent-abbreviations */
+
 import { motion, useAnimation } from 'motion/react';
 import { forwardRef, useCallback, useImperativeHandle, useRef } from 'react';
 
