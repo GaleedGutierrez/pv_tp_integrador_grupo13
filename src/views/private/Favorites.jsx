@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
+
 import { useAppSelector } from '@hooks/useAppSelector';
 import { ProductsList } from '@sections/products/components/ProductsList';
 

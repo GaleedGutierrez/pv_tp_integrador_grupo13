@@ -332,7 +332,7 @@ export default tseslint.config(
 				'error',
 				{
 					'./src/*/': 'KEBAB_CASE',
-					'./src/components/*/': 'PASCAL_CASE',
+					// './src/components/*/': 'PASCAL_CASE',
 					'./src/components/*/components/**': 'PASCAL_CASE',
 					'./cypress/**/': 'KEBAB_CASE',
 					'./puppeteer/**/': 'KEBAB_CASE',

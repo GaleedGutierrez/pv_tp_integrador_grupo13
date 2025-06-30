@@ -5,7 +5,7 @@ import { CreateProductForm } from '@sections/products/components/CreateProductFo
  * @returns The rendered CreateProduct component.
  * */
 export const CreateProduct = () => (
-	<section className="mb-8">
+	<section className="my-8">
 		<CreateProductForm />
 	</section>
 );
