@@ -77,6 +77,15 @@
 		@apply font-primary-fallback;
 	}
 
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		text-wrap: balance;
+	}
+
 	h1:not(.font-primary),
 	h2:not(.font-primary),
 	h3:not(.font-primary) {
