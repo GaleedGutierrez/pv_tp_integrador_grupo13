@@ -87,6 +87,7 @@
 		"@stylistic/eslint-plugin": "^4.4.1",
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",
+		"@vitejs/plugin-basic-ssl": "^2.1.0",
 		"@vitejs/plugin-react-swc": "^3.9.0",
 		"@vitest/eslint-plugin": "^1.2.1",
 		"eslint": "^9.29.0",
