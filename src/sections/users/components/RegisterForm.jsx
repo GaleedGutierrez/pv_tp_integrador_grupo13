@@ -3,6 +3,7 @@
 
 import { useGlobalContext } from '@context/global.context';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { appRoutes } from '@routes/appRouters';
 import { Button } from '@ui/button';
 import {
 	Card,
@@ -22,6 +23,7 @@ import {
 } from '@ui/form';
 import { Input } from '@ui/input';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router';
 import { toast } from 'sonner';
 
 import { RegisterSchema } from '../validations/RegisterSchema';
@@ -40,11 +42,15 @@ export const RegisterForm = () => {
 			confirmPassword: '',
 		},
 	});
+	const navigate = useNavigate();
 	const handleFormSubmit = (data) => {
 		try {
 			userRegister?.register(data);
 			toast.success('Registro exitoso, ahora podes iniciar sesión.');
 			form.reset();
+			void navigate(appRoutes.public.login, {
+				replace: true,
+			});
 		} catch {
 			form.setError('email', {
 				message: 'Este correo electrónico ya ha sido registrado.',
@@ -124,7 +130,7 @@ export const RegisterForm = () => {
 									render={({ field }) => (
 										<FormItem>
 											<FormLabel className="text-base">
-												Correo Electrónico
+												Correo electrónico
 											</FormLabel>
 											<FormControl>
 												<Input
