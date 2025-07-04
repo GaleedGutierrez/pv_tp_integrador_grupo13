@@ -6,7 +6,7 @@ import { Layout } from '../Layout';
 import { Login } from './Login';
 import { Register } from './Register';
 
-export const PublicApp = () => (
+export const PublicRoutes = () => (
 	<Routes>
 		<Route element={<Layout />}>
 			<Route

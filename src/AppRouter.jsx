@@ -1,6 +1,6 @@
 import { useAuthContext } from '@context/auth.context';
-import { PrivateApp } from '@views/private/PrivateApp';
-import { PublicApp } from '@views/public/PublicApp';
+import { PrivateRoutes } from '@views/private/PrivateRoutes';
+import { PublicRoutes } from '@views/public/PublicApp';
 import { LoaderIcon } from 'lucide-react';
 import { BrowserRouter } from 'react-router';
 
@@ -27,7 +27,7 @@ function AppRouter() {
 
 	return (
 		<BrowserRouter>
-			{isLoggedIn ? <PrivateApp /> : <PublicApp />}
+			{isLoggedIn ? <PrivateRoutes /> : <PublicRoutes />}
 		</BrowserRouter>
 	);
 }

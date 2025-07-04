@@ -9,7 +9,7 @@ import { Home } from './Home';
 import { ProductsDetails } from './ProductsDetails';
 import { UpdateProduct } from './UpdateProduct';
 
-export const PrivateApp = () => (
+export const PrivateRoutes = () => (
 	<Routes>
 		<Route element={<Layout />}>
 			<Route
