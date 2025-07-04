@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-nocheck
 /* eslint-disable react-refresh/only-export-components */
-
+// @ts-nocheck
 import { Slot } from '@radix-ui/react-slot';
 import { cva } from 'class-variance-authority';
 
