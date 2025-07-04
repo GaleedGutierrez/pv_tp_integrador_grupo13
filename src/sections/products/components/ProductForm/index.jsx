@@ -105,6 +105,12 @@ export const ProductForm = ({ modeForm, initialData, productId }) => {
 
 					addNewProductStore(NEW_PRODUCT);
 					toast.success('Producto creado correctamente.');
+					globalThis.scrollTo({ top: 0, behavior: 'smooth' });
+					void navigate(
+						appRoutes.private.products.buildUrl.details(
+							NEW_PRODUCT.id,
+						),
+					);
 				})
 				.catch((error) => {
 					console.error('Error al crear el producto:', error);
@@ -129,6 +135,10 @@ export const ProductForm = ({ modeForm, initialData, productId }) => {
 
 					updateProductStore(UPDATED_PRODUCT);
 					toast.success('Producto actualizado correctamente.');
+					globalThis.scrollTo({ top: 0, behavior: 'smooth' });
+					void navigate(
+						appRoutes.private.products.buildUrl.details(productId),
+					);
 				})
 				.catch((error) => {
 					console.error('Error al actualizar el producto:', error);
