@@ -89,7 +89,7 @@ export const LoginForm = () => {
 									render={({ field }) => (
 										<FormItem>
 											<FormLabel className="text-base">
-												Correo Electrónico
+												Correo electrónico
 											</FormLabel>
 											<FormControl>
 												<Input
