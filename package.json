@@ -88,7 +88,7 @@
 		"@types/react": "^19.1.2",
 		"@types/react-dom": "^19.1.2",
 		"@vitejs/plugin-basic-ssl": "^2.1.0",
-		"@vitejs/plugin-react-swc": "^3.9.0",
+		"@vitejs/plugin-react-swc": "^3.10.2",
 		"@vitest/eslint-plugin": "^1.2.1",
 		"eslint": "^9.29.0",
 		"eslint-config-prettier": "^10.1.5",
