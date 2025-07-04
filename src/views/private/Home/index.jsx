@@ -28,7 +28,10 @@ export const Home = () => {
 	return (
 		<>
 			<Hero />
-			<section className="lg:py-18 py-12">
+			<section
+				className="lg:py-18 py-12"
+				id="home-products"
+			>
 				<CarouselProducts
 					products={WOMEN_PRODUCTS}
 					title="Ropa de mujer"
